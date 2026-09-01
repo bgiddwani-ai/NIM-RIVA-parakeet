@@ -197,9 +197,8 @@ Because we overrode the entrypoint, the server is not running yet. Point Riva at
 just built and start it in the background:
 
 ```bash
-/opt/riva/bin/riva_server \
-  --asr_service=true --nlp_service=false --tts_service=false \
-  --model_repository=/data/models &
+export NIM_DISABLE_MODEL_DOWNLOAD=true
+bash /opt/nim/start_server.sh
 ```
 
 Wait for the log line indicating the server is listening on `0.0.0.0:50051`, then confirm the model
